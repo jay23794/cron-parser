@@ -286,13 +286,16 @@ The project follows a clean, modular architecture with separation of concerns:
 
 ```
 ### Data Flow
+
 Input String
     ↓
 [Validate Args]
     ↓
-[Parse Expression] → Split into fields
+[Parse Expression]
+    └─ Split into fields
     ↓
-[Parse Each Field] → minute, hour, day, month, weekday
+[Parse Each Field]
+    └─ minute, hour, day, month, weekday
     ↓
 [Validate Values]
     ↓
@@ -300,6 +303,6 @@ Input String
     ↓
 Display Result
 
+
 ```
 
----
