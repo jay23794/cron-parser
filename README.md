@@ -127,13 +127,13 @@ npm install -D tsx typescript @types/node
 ### Basic Command
 
 ```bash
-npx tsx src/app.ts "<cron-expression>"
+npx tsx app.ts "<cron-expression>"
 ```
 
 ### Example
 
 ```bash
-npx tsx src/app.ts "*/15 0 1,15 * 1-5 /usr/bin/find"
+npx tsx app.ts "*/15 0 1,15 * 1-5 /usr/bin/find"
 ```
 
 ### Output
@@ -249,6 +249,7 @@ The test suite includes:
 - ❌ **Invalid expressions** (11 tests)
 ```
 
+```
 ## 🏗️ Architecture
 
 The project follows a clean, modular architecture with separation of concerns:
@@ -281,13 +282,10 @@ The project follows a clean, modular architecture with separation of concerns:
 - Orchestrates all components
 - Handles errors
 - Returns formatted output
-
-### Data Flow
-
-
-### Data Flow
+```
 
 ```
+### Data Flow
 Input String
     ↓
 [Validate Args]
@@ -301,6 +299,7 @@ Input String
 [Format Output]
     ↓
 Display Result
+
 ```
 
 ---
