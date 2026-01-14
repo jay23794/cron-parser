@@ -284,9 +284,10 @@ The project follows a clean, modular architecture with separation of concerns:
 - Returns formatted output
 ```
 
-```
-### Data Flow
 
+```
+##  Data Flow
+```
 Input String
     ↓
 [Validate Args]
@@ -302,7 +303,5 @@ Input String
 [Format Output]
     ↓
 Display Result
-
-
 ```
 
