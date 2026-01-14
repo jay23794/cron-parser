@@ -8,7 +8,7 @@ import { CronValidator } from "./validator/cron.validator";
 export class MainCron {
     private validator: CronValidator;
     private expressionParse: CronExpressionParser;
-      private format: CroneOutputFormatter;
+    private format: CroneOutputFormatter;
     constructor(
     ) {
         this.validator = new CronValidator();

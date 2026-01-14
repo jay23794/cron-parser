@@ -112,7 +112,6 @@ export class CroneFieldParser {
             }
 
             if (num > max) {
-                console.log(num, max);
                 throw new Error(
                     `Expression should be number ${min} - ${max} ${fieldName}`
                 );
@@ -131,7 +130,6 @@ export class CroneFieldParser {
         }
         return result;
     }
-
     parseStep(
         value: string,
         min: number,
@@ -171,15 +169,5 @@ export class CroneFieldParser {
 
         return [num];
     }
-    private validateRange(
-        start: number,
-        end: number,
-        min: number,
-        max: number,
-        fieldName: string
-    ): void {
-        if (start < min || start > max) {
-            throw new Error(`Range out of bounds in ${fieldName})`);
-        }
-    }
+   
 }
