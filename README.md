@@ -75,7 +75,7 @@ cron-parser/
 │   ├── types/
 │   │   └── cron.types.ts            # TypeScript interfaces
 │   ├── cron.main.ts                 # Main orchestrator
-│   └── index.ts                     # Entry point
+│   └── app.ts                     # Entry point
 │   ├── test/
 │       └── cron.test-command.ts     # Test
 ├── package.json
@@ -154,37 +154,37 @@ command        /usr/bin/find
 ### 1. **Wildcards** - Match all values
 
 ```bash
-npx tsx src/index.ts "* * * * * /command"
+npx tsx app.ts "* * * * * /command"
 ```
 
 ### 2. **Single Values** - Specific value
 
 ```bash
-npx tsx src/index.ts "5 14 15 6 5 /command"
+npx tsx app.ts "5 14 15 6 5 /command"
 ```
 
 ### 3. **Ranges** - Range of values
 
 ```bash
-npx tsx src/index.ts "0-5 8-17 1-7 1-6 0-4 /command"
+npx tsx app.ts "0-5 8-17 1-7 1-6 0-4 /command"
 ```
 
 ### 4. **Lists** - Comma-separated values
 
 ```bash
-npx tsx src/index.ts "0,15,30,45 9,12,18 * * * /command"
+npx tsx app.ts "0,15,30,45 9,12,18 * * * /command"
 ```
 
 ### 5. **Step Values** - Every nth value
 
 ```bash
-npx tsx src/index.ts "*/15 */6 * * * /command"
+npx tsx app.ts "*/15 */6 * * * /command"
 ```
 
 ### 6. **Mixed** - Combination of above
 
 ```bash
-npx tsx src/index.ts "0,30 9 1-7,15-21 * 1,3,5 /command"
+npx tsx app.ts "0,30 9 1-7,15-21 * 1,3,5 /command"
 ```
 
 ---
@@ -192,7 +192,7 @@ npx tsx src/index.ts "0,30 9 1-7,15-21 * 1,3,5 /command"
 
 ### Example 1: Every 15 minutes
 ```bash
-npx tsx src/index.ts "*/15 * * * * /backup.sh"
+npx tsx app.ts "*/15 * * * * /backup.sh"
 ```
 **Output:**
 ```
@@ -206,7 +206,7 @@ command        /backup.sh
 
 ### Example 2: Weekdays at 9 AM
 ```bash
-npx tsx src/index.ts "0 9 * * 1-5 /workday.sh"
+npx tsx app.ts "0 9 * * 1-5 /workday.sh"
 ```
 **Output:**
 ```
@@ -220,7 +220,7 @@ command        /workday.sh
 
 ### Example 3: First and 15th of every month
 ```bash
-npx tsx src/index.ts "0 0 1,15 * * /payroll.sh"
+npx tsx app.ts "0 0 1,15 * * /payroll.sh"
 ```
 **Output:**
 ```
@@ -281,6 +281,9 @@ The project follows a clean, modular architecture with separation of concerns:
 - Orchestrates all components
 - Handles errors
 - Returns formatted output
+
+### Data Flow
+
 
 ### Data Flow
 
