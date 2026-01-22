@@ -239,7 +239,7 @@ command        /payroll.sh
 ### Run all tests
 
 ```bash
-npx tsx test/CronParser.test.ts
+npx tsx src/test/cron.test-command.ts
 ```
 
 ### Test categories
